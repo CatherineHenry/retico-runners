@@ -270,35 +270,6 @@ test = ["Pillow", "contourpy[test-no-images]", "matplotlib"]
 test-no-images = ["pytest", "pytest-cov", "pytest-xdist", "wurlitzer"]
 
 [[package]]
-name = "cozmo"
-version = "1.4.11.dev0"
-description = "SDK for Anki Cozmo, the small robot with the big personality"
-category = "main"
-optional = false
-python-versions = "*"
-develop = true
-
-[package.dependencies]
-cozmoclad = "*"
-
-[package.extras]
-3dviewer = ["Pillow (>=3.3)", "PyOpenGL (>=3.1)", "numpy (>=1.11)"]
-camera = ["Pillow (>=3.3)", "numpy (>=1.11)"]
-test = ["pytest", "tox"]
-
-[package.source]
-type = "directory"
-url = "../../../cozmo-python-sdk-fork/cozmo-python-sdk/cozmo"
-
-[[package]]
-name = "cozmoclad"
-version = "3.4.0"
-description = "Low-level protocol for the Anki Cozmo SDK."
-category = "main"
-optional = false
-python-versions = "*"
-
-[[package]]
 name = "cycler"
 version = "0.12.1"
 description = "Composable style cycles"
@@ -2292,7 +2263,7 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "b0472bb588eb8a60edf71007a30e2cc26d346654dde0380763973a4c915827d2"
+content-hash = "72b4c44ae9bb420c9dff39770fdf93a4de6157d535d82367d9635f780eca90ec"
 
 [metadata.files]
 aiofiles = [
@@ -2593,10 +2564,6 @@ contourpy = [
     {file = "contourpy-1.2.0-pp39-pypy39_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b95a225d4948b26a28c08307a60ac00fb8671b14f2047fc5476613252a129776"},
     {file = "contourpy-1.2.0-pp39-pypy39_pp73-win_amd64.whl", hash = "sha256:0d7e03c0f9a4f90dc18d4e77e9ef4ec7b7bbb437f7f675be8e530d65ae6ef956"},
     {file = "contourpy-1.2.0.tar.gz", hash = "sha256:171f311cb758de7da13fc53af221ae47a5877be5a0843a9fe150818c51ed276a"},
-]
-cozmo = []
-cozmoclad = [
-    {file = "cozmoclad-3.4.0-py3-none-any.whl", hash = "sha256:b831b4caf38890813c31e294daeda5a503b342ae5609ba24138c9e7211ade208"},
 ]
 cycler = [
     {file = "cycler-0.12.1-py3-none-any.whl", hash = "sha256:85cef7cff222d8644161529808465972e51340599459b8ac3ccbac5a854e0d30"},

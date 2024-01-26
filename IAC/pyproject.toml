@@ -38,10 +38,14 @@ retico-core = {path = "../../retico-core", develop=true}
 # Added specifically for baseline retico dependencies
 opencv-python = "^4.9.0.80"
 transformers = "^4.37.1"
+mobile-sam = {git = "https://github.com/ChaoningZhang/MobileSAM.git"}
 segment-anything = {git = "https://github.com/facebookresearch/segment-anything.git"}
 torch = "^2.1.2"
 torchvision = "^0.16.2"
 matplotlib = "^3.8.2"
+timm = "^0.9.12"
+supervision = "^0.18.0"
+Glances = "^3.4.0.3"
 
 
 [build-system]

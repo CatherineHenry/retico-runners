@@ -7,26 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-#scikit-learn = "1.1.2"
-#pandas = "flexx"
-explauto = {path = "../../../../School/Thesis/explauto_fork/explauto", develop = true}
-#cozmo = {path = "../../../../Dev/cozmo-python-sdk-fork/cozmo-python-sdk/cozmo", develop = true}
-#psutil = "^5.9.4"
-#PyOpenGL = "^3.1.6"
-#sympy = "^1.11.1"
-#torch = "^1.13.1"
-#torchvision = "^0.14.1"
-#clip = {git = "https://github.com/openai/CLIP.git"}
-#ftfy = "^6.1.1"
-regex = "^2022.10.31"
-tqdm = "^4.64.1"
-black = "^23.1.0"
-#PyQt5 = "^5.15.9"
-#matplotlib = "^3.7.1"
-#ipyplot = "1.1.1"
 jupyterlab = "^3.6.3"
-#ipympl = "^0.9.3"
-#scikit-image = "^0.22.0"
 
 # Retico modules locally
 retico-dino = {path = "../../retico-dino", develop=true}

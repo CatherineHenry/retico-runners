@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.9.0"
 jupyterlab = "^3.6.3"
 
+explauto = {path = "../../../explauto"}
 # Retico modules locally
 retico-dino = {path = "../../retico-dino", develop=true}
 retico-cozmorobot = {path = "../../retico-cozmorobot", develop=true}
@@ -18,10 +19,12 @@ retico-core = {path = "../../retico-core", develop=true}
 
 # Added specifically for baseline retico dependencies
 opencv-python = "^4.9.0.80"
-transformers = "^4.37.1"
+#transformers = "^4.37.1"
+transformers = {git = "https://github.com/huggingface/transformers.git"}
 mobile-sam = {git = "https://github.com/ChaoningZhang/MobileSAM.git"}
 segment-anything = {git = "https://github.com/facebookresearch/segment-anything.git"}
 torch = "^2.1.2"
+#torch = {git = "https://github.com/pytorch/pytorch.git", rev = "3916ea6297478edca6ded19f0278f68fd7a2c032"}
 torchvision = "^0.16.2"
 matplotlib = "^3.8.2"
 timm = "^0.9.12"

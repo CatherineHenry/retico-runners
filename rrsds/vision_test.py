@@ -2,12 +2,12 @@ import sys, os
 
 os.environ['PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION'] = 'python'
 
-prefix = '/Users/catherinehenry/dev/catherine_retico/'
-sys.path.append(prefix+'retico-core')
-sys.path.append(prefix+'retico-vision')
-sys.path.append(prefix+'retico-sam')
-sys.path.append(prefix+'retico-dino')
-sys.path.append(prefix+'retico-clip')
+# prefix = '/Users/catherinehenry/dev/catherine_retico/'
+# sys.path.append(prefix+'retico-core')
+# sys.path.append(prefix+'retico-vision')
+# sys.path.append(prefix+'retico-sam')
+# sys.path.append(prefix+'retico-dino')
+# sys.path.append(prefix+'retico-clip')
 
 from retico_core import *
 from retico_core.debug import DebugModule

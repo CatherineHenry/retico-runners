@@ -14,8 +14,6 @@ from retico_vision.vision import WebcamModule
 
 # from retico_sam.sam import SAMModule
 
-import tkinter
-tk_root = tkinter.Tk()
 
 class ModelCheckpoint(Enum):
     h = 'sam_vit_h_4b8939.pth'  # huge

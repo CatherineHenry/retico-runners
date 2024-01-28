@@ -14,13 +14,12 @@ from retico_core.debug import DebugModule
 from retico_vision.vision import WebcamModule 
 from retico_dino.dino import Dinov2ObjectFeatures
 from retico_vision.vision import ExtractObjectsModule
-from retico_sam.sam import SAMModule
+from retico_sam.hfsam import SAMModule
 # from retico_clip.clip import ClipObjectFeatures
 
-path_var = 'sam_vit_h_4b8939.pth'
 
 webcam = WebcamModule()
-sam = SAMModule(model='h', path_to_chkpnt=path_var, use_bbox=True)  
+sam = SAMModule(show=False, model="facebook/sam-vit-base", use_bbox=True)   # hugging face sam
 extractor = ExtractObjectsModule(num_obj_to_display=1)  
 feats = Dinov2ObjectFeatures(show=False, top_objects=1)
 # feats = ClipObjectFeatures(show=True)

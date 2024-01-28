@@ -33,6 +33,7 @@ retico-dino = {path = "../../retico-dino", develop=true}
 retico-cozmorobot = {path = "../../retico-cozmorobot", develop=true}
 retico-sam = {path = "../../retico-sam", develop=true}
 retico-vision = {path = "../../retico-vision", develop=true}
+retico-zmq = {path = "../../retico-zmq", develop=true}
 retico-core = {path = "../../retico-core", develop=true}
 
 # Added specifically for baseline retico dependencies
@@ -46,6 +47,7 @@ matplotlib = "^3.8.2"
 timm = "^0.9.12"
 supervision = "^0.18.0"
 Glances = "^3.4.0.3"
+pyzmq = "^25.1.2"
 
 
 [build-system]

@@ -2,5 +2,7 @@
 /rrsds/extracted_objects/
 test_sam_image.jpg
 test_webcam_img.jpg
+test_dino_img.jpg
+iac/test_dino_sub_img/
 *.pt
 *.pth

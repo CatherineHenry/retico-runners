@@ -12,7 +12,7 @@ idk = ZeroMQto()
 
 
 ReaderSingleton(ip='192.168.1.212', port='12346')  # IP of client receiving messages from
-WriterSingleton(ip='192.168.1.212', port='12345')  # IP of client sending messages from
+WriterSingleton(ip='192.168.1.212', port='12348')  # IP of client sending messages from
 
 
 sam = SAMModule(show=False, use_bbox=True)   # hugging face sam

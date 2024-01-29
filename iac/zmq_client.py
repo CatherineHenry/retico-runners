@@ -1,4 +1,4 @@
-from retico_zmq import ZeroMQWriter, WriterSingleton, ZeroMQReader
+from retico_zmq import ZeroMQWriter, WriterSingleton, ZeroMQReader, ReaderSingleton
 from ZeroMQtoDetectedObjectsIU import ZeroMQtoDetectedObjects
 import sys, os
 from enum import Enum
@@ -22,6 +22,7 @@ tk_root = tkinter.Tk()
 # Whatever machine the writer is on is the IP you need for both server and client code
 # Reminder: Singleton is making a static reference, so all the classes you instantiate refer to the same object
 WriterSingleton(ip='192.168.1.212', port='12346')  # create ZeroMQ writer
+ReaderSingleton(ip='192.168.1.212', port='12348')  # IP of client receiving messages from
 
 # cozmo_cam_to_zmq = CozmoCameraToZeromqModule() # TODO:  do this instead of updating cozmo module directly
 # Create new module for everything going to be sent to the server

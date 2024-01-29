@@ -9,8 +9,8 @@ readme = "README.md"
 python = "^3.9"
 #scikit-learn = "1.1.2"
 #pandas = "flexx"
-explauto = {path = "../../../../School/Thesis/explauto_fork/explauto", develop = true}
-cozmo = {path = "../../../../Dev/cozmo-python-sdk-fork/cozmo-python-sdk/cozmo", develop = true}
+explauto = {path = "../../../explauto", develop = true}
+cozmo = {path = "../../../cozmo-python-sdk/cozmo", develop = true}
 #psutil = "^5.9.4"
 #PyOpenGL = "^3.1.6"
 #sympy = "^1.11.1"

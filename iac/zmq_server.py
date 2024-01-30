@@ -1,5 +1,9 @@
 
 import os
+
+from retico_dino import Dinov2ObjectFeatures
+from retico_vision import ExtractObjectsModule
+
 os.environ['COZMO'] = "/Users/catherinehenry/Dev/cozmo-python-sdk-fork/src"
 
 from ZeroMQto import ZeroMQto
@@ -17,21 +21,26 @@ WriterSingleton(ip='192.168.1.232', port='12348')  # IP of client sending messag
 
 
 sam = SAMModule(show=False, use_bbox=True)   # hugging face sam
-sam_zeromq = ZeroMQWriter(topic='sam') # Everything from SAM will go out on topic IASR
-
+dino_zeromq = ZeroMQWriter(topic='dino') # Everything from SAM will go out on topic IASR
+extractor = ExtractObjectsModule(num_obj_to_display=1)
+feats = Dinov2ObjectFeatures(show=False, save=True, top_objects=1)
 debug = DebugModule()
-
 zmq_cozmo_cam_read = ZeroMQReader(topic="cozmo")
+
 zmq_cozmo_cam_read.subscribe(ztoi)
 ztoi.subscribe(sam)
-sam.subscribe(sam_zeromq)
-sam.subscribe(debug)
+sam.subscribe(extractor)
+extractor.subscribe(feats)
+feats.subscribe(dino_zeromq)
+feats.subscribe(debug)
 
 
 zmq_cozmo_cam_read.run()
 ztoi.run()
 sam.run()
-sam_zeromq.run()
+extractor.run()
+feats.run()
+dino_zeromq.run()
 debug.run()
 
 print("Running pipeline")
@@ -40,5 +49,7 @@ input()
 zmq_cozmo_cam_read.stop()
 ztoi.stop()
 sam.stop()
-sam_zeromq.run()
+extractor.stop()
+feats.stop()
+dino_zeromq.run()
 debug.stop()

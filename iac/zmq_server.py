@@ -34,7 +34,7 @@ sam.run()
 sam_zeromq.run()
 debug.run()
 
-
+print("Running pipeline")
 input()
 
 cozmo_read.stop()

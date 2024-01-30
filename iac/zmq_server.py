@@ -4,11 +4,11 @@ os.environ['COZMO'] = "/Users/catherinehenry/Dev/cozmo-python-sdk-fork/src"
 
 from ZeroMQto import ZeroMQto
 from retico_core.debug import DebugModule
-from retico_zmq import ZeroMQReader, ReaderSingleton, WriterSingleton, ZeroMQWriter
+from retico_zmq import ZeroMQReader, ReaderSingleton, WriterSingleton, ZeroMQWriter, ZMQtoImage
 from retico_sam.hfsam import SAMModule
 
 
-idk = ZeroMQto()
+ztoi = ZMQtoImage()
 
 
 ReaderSingleton(ip='192.168.1.212', port='12346')  # IP of client receiving messages from
@@ -21,15 +21,15 @@ sam_zeromq = ZeroMQWriter(topic='sam') # Everything from SAM will go out on topi
 
 debug = DebugModule()
 
-cozmo_read = ZeroMQReader(topic="cozmo")
-cozmo_read.subscribe(idk)
-idk.subscribe(sam)
+zmq_cozmo_cam_read = ZeroMQReader(topic="cozmo")
+zmq_cozmo_cam_read.subscribe(ztoi)
+ztoi.subscribe(sam)
 sam.subscribe(sam_zeromq)
 sam.subscribe(debug)
 
 
-cozmo_read.run()
-idk.run()
+zmq_cozmo_cam_read.run()
+ztoi.run()
 sam.run()
 sam_zeromq.run()
 debug.run()
@@ -37,8 +37,8 @@ debug.run()
 print("Running pipeline")
 input()
 
-cozmo_read.stop()
-idk.stop()
+zmq_cozmo_cam_read.stop()
+ztoi.stop()
 sam.stop()
 sam_zeromq.run()
 debug.stop()

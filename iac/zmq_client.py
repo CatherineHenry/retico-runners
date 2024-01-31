@@ -37,7 +37,9 @@ def init_all(robot : cozmo.robot.Robot):
     ztof = ZMQtoObjectFeatures()
 
 
-    cozmo_cam = CozmoCameraModule(robot, exposure=0.45, gain=0.03)
+    # cozmo_cam = CozmoCameraModule(robot, exposure=0.45, gain=0.03)
+    # cozmo_cam = CozmoCameraModule(robot, exposure=0.5, gain=0.05)
+    cozmo_cam = CozmoCameraModule(robot, exposure=0.4, gain=0.03)
 
     # sam = SAMModule(model=path_var.name, path_to_chkpnt=path_var.value, use_bbox=True) # fb sam
     # sam = SAMModule(model='t', path_to_chkpnt=path_var, use_bbox=True) # mobile same
@@ -45,7 +47,7 @@ def init_all(robot : cozmo.robot.Robot):
     debug = DebugModule()
 
     cozmo_cam_zeromq = ZeroMQWriter(topic='cozmo')  # Everything from Cozmo Cam will go out on topic IASR
-    sam_zmq_read = ZeroMQReader(topic='sam')
+    sam_zmq_read = ZeroMQReader(topic='dino')
 
     cozmo_cam.subscribe(cozmo_cam_zeromq)
     sam_zmq_read.subscribe(ztof)

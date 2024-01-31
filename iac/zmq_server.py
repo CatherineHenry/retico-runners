@@ -10,7 +10,7 @@ from ZeroMQto import ZeroMQto
 from retico_core.debug import DebugModule
 from retico_zmq import ZeroMQReader, ReaderSingleton, WriterSingleton, ZeroMQWriter, ZMQtoImage
 # from retico_sam.hfsam import SAMModule
-from retico_sam.sam import SAMModule
+from retico_sam.sam import SAMModule, ExtractType
 
 ztoi = ZMQtoImage()
 
@@ -19,7 +19,7 @@ ReaderSingleton(ip='192.168.1.212', port='12346')  # IP of client receiving mess
 # WriterSingleton(ip='192.168.1.227', port='12348')  # IP of client sending messages from (M1 Mac)
 WriterSingleton(ip='192.168.1.232', port='12348')  # IP of client sending messages from (Linux Box)
 
-sam = SAMModule(model='h', path_to_chkpnt='sam_vit_h_4b8939.pth', use_bbox=False, use_seg=True)
+sam = SAMModule(model='h', path_to_chkpnt='sam_vit_h_4b8939.pth', extract_type=ExtractType.seg)
 # sam = SAMModule(show=False, use_bbox=True)   # hugging face sam
 dino_zeromq = ZeroMQWriter(topic='dino') # Everything from SAM will go out on topic IASR
 extractor = ExtractObjectsModule(num_obj_to_display=1)

@@ -83,7 +83,7 @@ def init_all(robot : cozmo.robot.Robot):
     #
     # Instantiate Modules
     #
-    cozmo_cam = CozmoCameraModule(robot, exposure=0.45, gain=0.03)
+    cozmo_cam = CozmoCameraModule(robot, exposure=0.7, gain=0.1)
     ztof = ZMQtoObjectFeatures()
     debug = DebugModule()
 

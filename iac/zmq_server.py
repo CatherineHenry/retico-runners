@@ -22,7 +22,7 @@ WriterSingleton(ip='192.168.1.232', port='12348')  # IP of client sending messag
 sam = SAMModule(model='h', path_to_chkpnt='sam_vit_h_4b8939.pth', extract_type=ExtractType.seg)
 # sam = SAMModule(show=False, use_bbox=True)   # hugging face sam
 dino_zeromq = ZeroMQWriter(topic='dino') # Everything from SAM will go out on topic IASR
-extractor = ExtractObjectsModule(num_obj_to_display=1)
+extractor = ExtractObjectsModule(num_obj_to_display=1, keepmask=False)
 feats = Dinov2ObjectFeatures(show=False, save=True, top_objects=1)
 debug = DebugModule()
 zmq_cozmo_cam_read = ZeroMQReader(topic="cozmo")
